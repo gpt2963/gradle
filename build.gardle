@@ -1,0 +1,15 @@
+plugins {
+    id 'war'
+}
+
+// Specify the WAR file settings
+war {
+    // Set the name of the WAR file
+    archiveFileName = 'ROOT.war'
+
+    // Define the contents of the WAR file
+    from('src/main/webapp') {
+        into 'WEB-INF/classes'
+        include '**/*'
+    }
+}
