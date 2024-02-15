@@ -1,19 +1,17 @@
-
-#Use CentOS as the base image
-FROM centos:7
-
+# Use a base image with Java already installed
+FROM openjdk:11-jdk-slim
 
 # Set environment variables for Gradle
 ENV GRADLE_VERSION=8.6
 
 # Install necessary tools and dependencies
-RUN yum install -y wget unzip md5sum java-11-openjdk-devel \
+RUN apt-get install -y wget unzip  \
         && cd /opt \
         && wget -q --no-check-certificate https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip  \
         && unzip -q gradle-${GRADLE_VERSION}-bin.zip \
         && mv gradle-${GRADLE_VERSION} gradle \
         && rm gradle-${GRADLE_VERSION}-bin.zip \
-        && yum clean all
+        && yum-apt clean all
 
 # Set gradle environment variables and update PATH
 ENV GRADLE_HOME=/opt/gradle
