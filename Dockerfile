@@ -14,9 +14,6 @@ RUN wget -q --show-progress  https://services.gradle.org/distributions/gradle-${
 ENV GRADLE_HOME=/opt/gradle
 ENV PATH=${GRADLE_HOME}/bin:${PATH}
 
-# Set JAVA_HOME environment variable
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk
-
 
 # Create a directory in the container for the project
 RUN mkdir /app/
