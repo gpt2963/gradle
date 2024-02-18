@@ -7,9 +7,9 @@
 </head>
 <body>
     <h1>&#9996; &#9996; &#9996; Congratulation !! Congratulation !! &#9996; &#9996; &#9996;</h1>
-    <p> You Sucessfully Deploy at </p>
+    <p> Today is  </p>
     <div id="currentDay"></div>
-  <div id="currentTime"></div>
+
 
   <script>
     // Function to get the current day of the week
@@ -20,22 +20,12 @@
       return days[currentDayIndex];
     }
 
-    // Function to get the current time
-    function getCurrentTime() {
-      const currentDate = new Date();
-      const hours = currentDate.getHours();
-      const minutes = currentDate.getMinutes();
-      const seconds = currentDate.getSeconds();
-      return `${hours}:${minutes}:${seconds}`;
-    }
-
     // Update the HTML elements with current day and time
     function updateDayAndTime() {
       const currentDayElement = document.getElementById('currentDay');
-      const currentTimeElement = document.getElementById('currentTime');
 
-      currentDayElement.textContent = 'Today is ' + getCurrentDay();
-      currentTimeElement.textContent = 'Current time is ' + getCurrentTime();
+      currentDayElement.textContent =  getCurrentDay();
+ 
     }
 
     // Call the function initially to display the current day and time
